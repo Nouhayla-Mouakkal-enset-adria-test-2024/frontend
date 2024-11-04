@@ -1,10 +1,22 @@
 import { Component } from '@angular/core';
+import { OnInit } from '@angular/core';
+import { initFlowbite } from 'flowbite';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  styleUrl: './app.component.css'
+  styleUrls: ['./app.component.css']
 })
-export class AppComponent {
+export class AppComponent implements OnInit {
   title = 'frontend';
+
+  // ngOnInit(): void {
+  //   if (typeof document !== 'undefined') {
+  //     const { initFlowbite } = require('flowbite');
+  //     initFlowbite();
+  //   }
+  // }
+  ngOnInit(): void {
+    initFlowbite();
+  }
 }
