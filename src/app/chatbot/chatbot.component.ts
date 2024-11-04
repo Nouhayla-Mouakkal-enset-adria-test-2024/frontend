@@ -1,10 +1,11 @@
 import { Component, OnInit } from '@angular/core';
-import { Message } from './model/message.model';
 import { HttpClient, HttpErrorResponse } from '@angular/common/http';
-import { throwError } from 'rxjs';
 import { Modal } from 'flowbite';
 // import { SpeechRecognitionService } from './../../shared/speechrecognition.service';
-
+interface Message {
+  content: string;
+  isBot: boolean;
+}
 @Component({
   selector: 'app-chatbot',
   templateUrl: './chatbot.component.html',
@@ -26,9 +27,9 @@ export class ChatbotComponent implements OnInit {
 
   ngOnInit() {
     const $modalElement = document.querySelector('#progress-modal') as HTMLElement | null;
-    if ($modalElement) {
-      this.modal = new Modal($modalElement);
-    }
+    // if ($modalElement) {
+    //   this.modal = new Modal($modalElement);
+    // }
   }
   //********************* BOT CONVERSATION MANAGEMENT WITH BACKEND */
   sendMessage() {
